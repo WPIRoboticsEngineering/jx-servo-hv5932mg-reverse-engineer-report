@@ -31,7 +31,16 @@ Con
 
 ![](fig-1.jpg)
 
-Servo controller chip marking is lasered off. Suspect a variant of `MAC900` servo ASIC. MAX900 requires an external crystal and uses a different pin for PWM input. The same board is used in both servo and continuous rotation motor models. There are some contact pads on the other side of the board, possibly for programming/configuration.
+Servo controller chip marking is lasered off. ~~Suspect a variant of `MAC900` servo ASIC. MAC900 requires an external crystal and uses a different pin for PWM input.~~ The same board is used in both servo and continuous rotation motor models. There are some contact pads on the other side of the board, possibly for programming/configuration.
+
+The controller is likely a `STM8s` 8-bit microcontroller based on the pinouts. The pads on the back are SWIM. The pinout below is in the same orientation as the next figure. ST-Link can be used to reprogram the chip.
+
+```
+SWIM
+Reset
+Vcc
+GND
+```
 
 **`J3Y`** `S8050` NPN transistors. Ic = 0.5 A. Vce_max = 25 V. They are possibly gate drivers.
 
